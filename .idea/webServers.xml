@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="0da73f4c-8473-4583-a425-cee9f326fa7a" name="1" url="https://uzaharova.simtechdev.com">
+        <fileTransfer host="staging1.staging.simtechdev.com" port="22" rootFolder="/home/uzaharova/public_html/1" accessType="SFTP" authAgent="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
