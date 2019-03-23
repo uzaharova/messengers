@@ -5,7 +5,7 @@ namespace Tests\Unit;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use App\Traits\MessengerTrait;
+use App\Services\MessageServices;
 
 class EmailTest extends TestCase
 {
@@ -29,7 +29,8 @@ class EmailTest extends TestCase
      */
     public function testEmailCheck($email, $expected)
     {
-        $result = MessengerTrait::checkValidateEmail($email);
+        $message_services = new MessageServices();
+        $result = $message_services->checkValidateEmail($email);
 
         $this->assertEquals($expected, $result);
     }

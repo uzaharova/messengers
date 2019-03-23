@@ -5,7 +5,7 @@ namespace Tests\Unit;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use App\Traits\MessengerTrait;
+use App\Services\MessageServices;
 
 class DelayTest extends TestCase
 {
@@ -28,7 +28,8 @@ class DelayTest extends TestCase
      */
     public function testDelayCheck($delay_date, $start, $expected)
     {
-        $delay = MessengerTrait::getDelay($delay_date, $start);
+        $message_services = new MessageServices();
+        $delay = $message_services->getDelay($delay_date, $start);
 
         $this->assertEquals($expected, $delay);
     }
